@@ -5,6 +5,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 import time
+import os
 
 from actions.combobox import select_combo_value
 from actions.button import click_by_class
@@ -34,7 +35,7 @@ def do_invoice(driver, amount):
     click_by_x_path(driver, "//input[@value='Continuar >']")
 
 
-    write_by_id(driver, 'detalle_descripcion1', 'Servicios Informaticos')
+    write_by_id(driver, 'detalle_descripcion1', os.getenv('MOTIVO_FACTURA'))
     write_by_id(driver, 'detalle_precio1', amount)
 
     time.sleep(1)
