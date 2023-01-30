@@ -11,10 +11,18 @@ from reports import get_invoiced_amount
 from dotenv import load_dotenv
 load_dotenv()
 
+
+amount = 5000
+quantity = 5
+
+i = 0
+while (i < quantity):
+    driver = webdriver.Firefox()
+    do_login(driver)
+    do_invoice(driver, amount)
+    driver.close()
+    i = i + 1
+
 driver = webdriver.Firefox()
-amount = 22000
-
 do_login(driver)
-
-do_invoice(driver, amount)
-# get_invoiced_amount(driver)
+get_invoiced_amount(driver)
