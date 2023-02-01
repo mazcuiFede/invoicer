@@ -18,7 +18,7 @@ def do_invoice(driver, amount):
     time.sleep(0.2)
     click_by_class(driver, 'ui-button-text')
 
-    select_combo_value(driver, 'puntodeventa', '2')
+    select_combo_value(driver, 'puntodeventa', '1')
 
     time.sleep(0.2)
     click_by_x_path(driver, "//input[@value='Continuar >']")

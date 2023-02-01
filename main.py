@@ -7,13 +7,14 @@ from selenium.webdriver.support import expected_conditions as EC
 from login import do_login
 from invoice import do_invoice
 from reports import get_invoiced_amount
+from random import randrange
+import time
 
 from dotenv import load_dotenv
 load_dotenv()
 
-
-amount = 5000
-quantity = 5
+amount = 7500
+quantity = 7
 
 i = 0
 while (i < quantity):
@@ -22,6 +23,11 @@ while (i < quantity):
     do_invoice(driver, amount)
     driver.close()
     i = i + 1
+
+    timer = randrange(5)
+    print(timer)
+    time.sleep(timer)
+
 
 driver = webdriver.Firefox()
 do_login(driver)
