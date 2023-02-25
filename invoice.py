@@ -20,7 +20,7 @@ def do_invoice(driver, amount):
 
     select_combo_value(driver, 'puntodeventa', '1')
 
-    time.sleep(0.2)
+    time.sleep(1)
     click_by_x_path(driver, "//input[@value='Continuar >']")
 
 

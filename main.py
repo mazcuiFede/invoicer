@@ -13,8 +13,8 @@ import time
 from dotenv import load_dotenv
 load_dotenv()
 
-amount = 7500
-quantity = 7
+amount = 7000
+quantity = 5
 
 i = 0
 while (i < quantity):
@@ -24,7 +24,7 @@ while (i < quantity):
     driver.close()
     i = i + 1
 
-    timer = randrange(5)
+    timer = randrange(4)
     print(timer)
     time.sleep(timer)
 
