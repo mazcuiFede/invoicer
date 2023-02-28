@@ -6,7 +6,7 @@ Para facturar de manera automática. Los montos no se pueden elegir ya que se ge
 Seleccionar la cantidad de facturas (editando el valor quantity)
 
 ### Step 2
-Ejecutar usando ```python main```
+Ejecutar usando ```python main.py```
 
 ## Tech stack
 - Python 3 
