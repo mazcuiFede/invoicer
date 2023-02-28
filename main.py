@@ -8,24 +8,26 @@ from login import do_login
 from invoice import do_invoice
 from reports import get_invoiced_amount
 from random import randrange
-import time
+import time, math, random
 
 from dotenv import load_dotenv
 load_dotenv()
 
-amount = 7000
-quantity = 5
+quantity = 1
 
 i = 0
 while (i < quantity):
+    #ammount generated under Benford's law
+    amount = math.floor(10**random.random()) * 1000
+    print("Generating invoice: $" + str(amount))
     driver = webdriver.Firefox()
     do_login(driver)
     do_invoice(driver, amount)
     driver.close()
     i = i + 1
 
-    timer = randrange(4)
-    print(timer)
+    timer = randrange(40)
+    print("Waiting for " + str(timer) + "secs.")
     time.sleep(timer)
 
 

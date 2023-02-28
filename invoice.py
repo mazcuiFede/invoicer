@@ -39,7 +39,7 @@ def do_invoice(driver, amount):
     write_by_id(driver, 'detalle_descripcion1', os.getenv('MOTIVO_FACTURA'))
     write_by_id(driver, 'detalle_precio1', amount)
 
-    time.sleep(0.2)
+    time.sleep(1.2)
     click_by_x_path(driver, "//input[@value='Continuar >']")
 
     time.sleep(0.2)
