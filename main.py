@@ -13,20 +13,21 @@ import time, math, random
 from dotenv import load_dotenv
 load_dotenv()
 
-quantity = 1
+#quantity = 1
 
-i = 0
-while (i < quantity):
+amounts = [2000,3000]
+
+#i = 0
+for amount in amounts:
     #ammount generated under Benford's law
-    amount = math.floor(10**random.random()) * 1000
+    #amount = math.floor(10**random.random()) * 1000
     print("Generating invoice: $" + str(amount))
     driver = webdriver.Firefox()
     do_login(driver)
     do_invoice(driver, amount)
     driver.close()
-    i = i + 1
 
-    timer = randrange(40)
+    timer = randrange(3)
     print("Waiting for " + str(timer) + "secs.")
     time.sleep(timer)
 
